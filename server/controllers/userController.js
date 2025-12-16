@@ -12,7 +12,7 @@ export const rigisterUser = async (req,res)=>{
   try {
     const{name,password,email} = req.body;
     if(!name || !password || !email || password.length <8){
-      res.json({success:false,message:"all fields are  required"})
+      res.json({success:false,message:"all fields are required dont miss any one field"})
     }
     const existingUser = await User.findOne({email})
     if(existingUser){
